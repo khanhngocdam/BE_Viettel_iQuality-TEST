@@ -86,7 +86,7 @@ def parse_time_key(
         hour = _extract_hour(text)
         if hour is None:
             hour = now_dt.hour if date == now_dt.date() else 0
-        return f"{date.strftime('%Y-%m-%d')}-{hour:02d}"
+        return f"{date.strftime('%Y-%m-%d')}-00"
 
     if aggregate_level == AggregateLevel.weekly:
         iso_year, iso_week, _ = date.isocalendar()

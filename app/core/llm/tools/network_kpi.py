@@ -10,7 +10,9 @@ from app.core.llm.tools.base import BaseTool
 class NetworkSummaryTool(BaseTool):
     def __init__(self, db: Session):
         self.db = db
-
+    @property
+    def is_final_answer(self) -> bool:
+        return True
     @property
     def name(self) -> str:
         return "get_network_summary"
@@ -77,7 +79,6 @@ class NetworkSummaryTool(BaseTool):
 
         # Parse Date
         date_key = parse_time_key(date if date else None, agg_level_enum)
-
         # Execute Logic
         try:
             result = summary_internet_kpi(

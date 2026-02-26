@@ -17,6 +17,11 @@ client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=OPENROUTER_API_KEY,
 )
+
+# client = OpenAI(
+#     base_url="http://171.225.223.209:11434/v1",
+#     api_key="ollama"
+# )
 router = APIRouter(tags=["Summary-Assistant"])
 
 @router.get("/summary-assistant/{aggregate_level}")
@@ -33,8 +38,9 @@ def summary_internet_kpi(
             aggregate_level=aggregate_level,
             kpi_code=kpi_code,
             location_level="network",
-            duration=1,
-            db=db
+            duration=8,
+            db=db,
+            time_limit=date_hour,
         )
 
         # Get KPI change data
@@ -47,18 +53,17 @@ def summary_internet_kpi(
         )
         # Create the prompt (theo tuần hoặc theo ngày tùy aggregate_level)
         promt_general = "Bối cảnh chung về 3 nhà mạng:\n" + promt_internet_kpi_general(
-            result_general, aggregate_level
+            result_general[0:24], aggregate_level
         )
         promt_change = promt_kpi_change(result_change, kpi_code, isp, aggregate_level)
         promt_result = promt_general + promt_change
-
         # Call OpenRouter's model
         response = client.chat.completions.create(
             model="arcee-ai/trinity-large-preview:free",
             messages=[
                 {"role": "system", "content": "Bạn là chuyên gia phân tích dữ liệu trong lĩnh vực hệ thống mạng."},
                 {"role": "user", "content": promt_result},
-            ]
+            ],
         )
 
         # Return the model's response (not the prompt)

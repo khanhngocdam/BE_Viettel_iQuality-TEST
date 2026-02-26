@@ -1,3 +1,5 @@
+from datetime import datetime
+from typing import Optional
 from fastapi import APIRouter, HTTPException, Depends, Query
 from sqlalchemy.orm import Session
 from app.core.deps import get_db
@@ -10,8 +12,11 @@ def get_internet_kpi(
     aggregate_level: AggregateLevel,
     kpi_code: str = Query(..., description="KPI code"),
     location_level: str = Query(..., description="Location level"),
-    duration: int = Query(1, ge=1, le=24, description="Duration in months (1-24)"),
-    db: Session = Depends(get_db)
+    duration: int = Query(8, ge=1, le=48, description="Duration"),
+    db: Session = Depends(get_db),
+    time_limit: str | None = Query(
+        None, description="Date and hour (YYYY-MM-DD-HH)"
+    )
 ):
     try:
         # Gọi hàm từ service để lấy dữ liệu
@@ -20,7 +25,8 @@ def get_internet_kpi(
             kpi_code=kpi_code,
             location_level=location_level,
             duration=duration,
-            db=db
+            db=db,
+            time_limit=time_limit
         )
 
         return {

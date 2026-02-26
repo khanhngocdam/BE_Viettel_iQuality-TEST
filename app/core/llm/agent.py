@@ -75,28 +75,34 @@ class ChatAgent:
                 # Add Assistant's "intent to call tool" message to history
                 # Convert ChatCompletionMessage to dict to match history format
                 messages.append(msg.model_dump())
-                
+                # Optionally, some tools trả về luôn câu trả lời cuối cùng
+                final_answer_from_tool: Optional[str] = None
+
                 for tool_call in msg.tool_calls:
                     # Verify type
                     if tool_call.type != "function":
                         continue
-
                     fn_name = tool_call.function.name
                     fn_args_str = tool_call.function.arguments or "{}"
-                    
+
                     # Execute Tool
                     tool_result = f"Error: Tool '{fn_name}' not found."
                     if fn_name in self.tool_map:
                         try:
                             args = json.loads(fn_args_str)
+                            tool_instance = self.tool_map[fn_name]
                             logger.info(f"[Agent] Calling tool: {fn_name} | Args: {args}")
-                            tool_result = self.tool_map[fn_name].run(**args)
+                            tool_output = tool_instance.run(**args)
+                            tool_result = tool_output
+
+                            # Nếu tool được đánh dấu là trả về final answer thì dùng luôn
+                            if getattr(tool_instance, "is_final_answer", False):
+                                final_answer_from_tool = str(tool_output)
                         except json.JSONDecodeError:
                             tool_result = "Error: Invalid JSON arguments."
                         except Exception as e:
                             tool_result = f"Error executing tool: {str(e)}"
                             logger.error(f"[Agent] Tool execution error: {e}")
-
                     # Append Tool Output
                     messages.append({
                         "role": "tool",
@@ -104,12 +110,16 @@ class ChatAgent:
                         "content": str(tool_result),
                     })
 
-                # 5. Second Call to LLM (Generate final answer based on tool output)
-                final_res = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages, # type: ignore
-                )
-                final_answer = final_res.choices[0].message.content or ""
+                if final_answer_from_tool is not None:
+                    # Một (hoặc nhiều) tool đã trả về luôn câu trả lời cuối cùng
+                    final_answer = final_answer_from_tool
+                else:
+                    # 5. Second Call to LLM (Generate final answer based on tool output)
+                    final_res = self.client.chat.completions.create(
+                        model=self.model,
+                        messages=messages, # type: ignore
+                    )
+                    final_answer = final_res.choices[0].message.content or ""
             else:
                 # No tool called, just direct answer
                 final_answer = msg.content or ""
