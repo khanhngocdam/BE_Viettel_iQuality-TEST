@@ -632,5 +632,129 @@
       "role": "assistant",
       "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_01, HCM_Speedtest_Viettel_02, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Testing_16, HNI_Testing_17, HNI_Testing_18, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
     }
+  ],
+  "81139659-35a7-4646-8287-70a7f13464e7": [
+    {
+      "role": "user",
+      "content": "ngày 26/02/2026 độ trễ mạng viettel như nào nhở ?"
+    },
+    {
+      "role": "assistant",
+      "content": "Độ trễ mạng (tỉ lệ mẫu đo tồi) của Viettel ngày 26/02/2026 là 37.18, tăng 0.46 điểm so với ngày trước. Xu hướng chung cho thấy chỉ số này có sự dao động nhẹ quanh mức 36-40 trong những ngày gần đây.\n\nỞ cấp độ tỉnh thành, có 2 địa bàn có sự thay đổi đáng kể: Đồng Tháp giảm mạnh 2.73 điểm (từ 29.59 xuống 26.86), trong khi Hồ Chí Minh tăng 2.06 điểm (từ 19.01 lên 21.07) - đây là mức tăng lớn nhất so với các địa bàn khác.\n\nSo sánh với VNPT (44.46) và FPT (39.51), Viettel vẫn duy trì hiệu suất tốt hơn với khoảng cách 7-12 điểm. Tuy nhiên, cần lưu ý rằng Hồ Chí Minh - một thị trường trọng điểm - có dấu hiệu chất lượng suy giảm trong khi Đồng Tháp cải thiện đáng kể."
+    },
+    {
+      "role": "user",
+      "content": "thiết bị nào còn hoạt động nhỉ"
+    },
+    {
+      "role": "assistant",
+      "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_01, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Speedtest_Viettel_02, HNI_Testing_16, HNI_Testing_17, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
+    },
+    {
+      "role": "user",
+      "content": "reload thiết bị"
+    },
+    {
+      "role": "assistant",
+      "content": "Tôi cần bạn cung cấp username của thiết bị cần reload. Bạn có thể xem danh sách thiết bị đang hoạt động ở trên và cho tôi biết username cụ thể cần reload. Ví dụ: \"reload DNG_Speedtest_Viettel_01\" hoặc \"reload HCM_Agent_1\"."
+    },
+    {
+      "role": "user",
+      "content": "reload TTH_Agent_2 cho tao"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'TTH_Agent_2'."
+    }
+  ],
+  "9a5ece9e-3eba-4906-a306-fc1ecc1e685b": [
+    {
+      "role": "user",
+      "content": "chát lượng độ trễ viettel 26/02/2026 như nào"
+    },
+    {
+      "role": "assistant",
+      "content": "Tôi không thể truy cập dữ liệu đo kiểm cho ngày 26/02/2026 vì đây là ngày trong tương lai. Tôi chỉ có thể cung cấp thông tin về chất lượng mạng dựa trên dữ liệu đo kiểm thực tế trong quá khứ hoặc hiện tại.\n\nBạn có muốn tôi kiểm tra chất lượng độ trễ của Viettel cho một ngày cụ thể trong quá khứ hoặc hiện tại không?"
+    }
+  ],
+  "9efd66a6-cdb1-40fe-a977-07b6f53ec4f8": [
+    {
+      "role": "user",
+      "content": "chất lượng độ trễ viettel 23/02/2026 như nào"
+    },
+    {
+      "role": "assistant",
+      "content": "Độ trễ mạng của Viettel ngày 23/02/2026 đạt 35.77, giảm nhẹ so với mức 36.68 của ngày trước. Trong khu vực 1, hầu hết các tỉnh đều cải thiện chất lượng, đặc biệt Lào Cai giảm mạnh 9.66 điểm. Khu vực 3 có nhiều cải thiện, riêng Tây Ninh tăng 6.02 điểm bất thường. Khu vực 2 ghi nhận sự tăng đột biến tại Quảng Ngãi (+2.95) và Thừa Thiên Huế (+1.96). So với các nhà mạng khác, Viettel vẫn duy trì chất lượng tốt hơn VNPT (43.22) và tương đương FPT (38.60)."
+    },
+    {
+      "role": "user",
+      "content": "thiết bị nào còn hoạt động"
+    },
+    {
+      "role": "assistant",
+      "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_02, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Speedtest_Viettel_02, HNI_Testing_16, HNI_Testing_17, HNI_Testing_18, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
+    },
+    {
+      "role": "user",
+      "content": "reload cho t TTH_Agent_2"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'TTH_Agent_2'."
+    }
+  ],
+  "60b02f3b-df35-400d-8c03-99e18519d9d9": [
+    {
+      "role": "user",
+      "content": "restart thiết bị TTH_Agent_2 và reload VQT_Testing_62 cho tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'restart' cho thiết bị 'TTH_Agent_2'."
+    }
+  ],
+  "c12fd329-ce06-44a0-91df-ee770820fc4c": [
+    {
+      "role": "user",
+      "content": "restart thiết bị TTH_Agent_2 và reload VQT_Testing_62 cho tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'restart' cho thiết bị 'TTH_Agent_2'."
+    },
+    {
+      "role": "user",
+      "content": "reload thiết bị VQT_AGENT cho tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "MISSING_INFO: Tên thiết bị 'VQT_AGENT' không hợp lệ. Gợi ý: VQT_Agent_32, VQT_Agent_61."
+    },
+    {
+      "role": "user",
+      "content": "reload thiết bị VQT_Agent_32"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'VQT_Agent_32'."
+    }
+  ],
+  "586be440-c038-4bb0-8e86-6feb1471648a": [
+    {
+      "role": "user",
+      "content": "reload thiết bị VQT_AGENT cho tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "MISSING_INFO: Tên thiết bị 'VQT_AGENT' không hợp lệ. Gợi ý: VQT_Agent_32, VQT_Agent_61."
+    },
+    {
+      "role": "user",
+      "content": "reload VQT_Agent_32"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'VQT_Agent_32'."
+    }
   ]
 }

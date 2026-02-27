@@ -68,8 +68,10 @@ class DeviceCommandTool(BaseTool):
     @property
     def description(self) -> str:
         return (
-            "Gửi lệnh điều khiển cho một thiết bị theo username. "
-            "Hỗ trợ các action: reload, restart, update."
+            "Luật điều khiển thiết bị (bắt buộc):"
+            "- Mỗi lệnh thiết bị tương ứng đúng 1 cặp (action, username)."
+            "- Không bỏ sót, không suy diễn thêm thiết bị."
+            "- Chỉ chấp nhận action: reload, restart, update_<version>."
         )
 
     @property
@@ -114,6 +116,38 @@ class DeviceCommandTool(BaseTool):
                 )
             if action_lower == "update_" or action_clean.endswith("_"):
                 return "MISSING_INFO: Thiếu version sau tiền tố update_."
+
+            # Validate username exists in source device table before writing command
+            exists_sql = text(
+                """
+                SELECT 1
+                FROM account_and_config
+                WHERE username = :username
+                LIMIT 1
+                """
+            )
+            exists = self.db.execute(exists_sql, {"username": username_clean}).first()
+            if not exists:
+                suggest_sql = text(
+                    """
+                    SELECT username
+                    FROM account_and_config
+                    WHERE username ILIKE :kw
+                    ORDER BY username ASC
+                    LIMIT 5
+                    """
+                )
+                suggestions = self.db.execute(
+                    suggest_sql,
+                    {"kw": f"%{username_clean}%"},
+                ).mappings().all()
+                suggestion_names = [str(r["username"]) for r in suggestions if r.get("username")]
+                if suggestion_names:
+                    return (
+                        f"MISSING_INFO: Tên thiết bị '{username_clean}' không hợp lệ. "
+                        f"Gợi ý: {', '.join(suggestion_names)}."
+                    )
+                return f"MISSING_INFO: Tên thiết bị '{username_clean}' không hợp lệ hoặc không tồn tại."
             insert_sql = text(
                 """
                 INSERT INTO device_commands (
