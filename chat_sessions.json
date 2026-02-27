@@ -438,5 +438,199 @@
       "role": "assistant",
       "content": "Độ trễ mạng Viettel ngày 24/02/2026 ở mức 36.31, tăng nhẹ so với ngày trước (35.77), cho thấy chất lượng mạng có xu hướng giảm nhẹ. So với các nhà mạng khác, Viettel có độ trễ thấp hơn VNPT (43.33) và FPT (38.49), duy trì vị thế tốt nhất thị trường.\n\nPhân tích theo khu vực, khu vực 3 ghi nhận nhiều tỉnh tăng đột biến: Tây Ninh (+3.74), Đồng Tháp (+3.12), Cần Thơ (+1.63), An Giang (+1.50), trong khi Hồ Chí Minh chỉ tăng nhẹ (+1.23). Khu vực 2 có Đà Nẵng tăng mạnh nhất (+2.87), các tỉnh còn lại biến động nhỏ hơn. Khu vực 1 ghi nhận xu hướng cải thiện ở nhiều tỉnh: Lào Cai (-2.17), Tuyên Quang (-1.62), Hải Phòng (-1.49), Hưng Yên (-1.47), Ninh Bình (-1.39).\n\nĐiểm đáng chú ý là Quảng Ngãi và Gia Lai có sự cải thiện đáng kể, trong khi một số tỉnh miền Trung và Nam bộ tăng độ trễ. Tổng quan, Viettel vẫn duy trì chất lượng tốt nhất thị trường, nhưng cần theo dõi sát các tỉnh có xu hướng tăng đột biến."
     }
+  ],
+  "7aa2ce98-bcf9-4b87-8f47-595b81178009": [
+    {
+      "role": "user",
+      "content": "hello, cho tôi danh sách thiết bị còn hoạt động"
+    },
+    {
+      "role": "assistant",
+      "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_01, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Speedtest_Viettel_02, HNI_Testing_16, HNI_Testing_17, HNI_Testing_18, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
+    },
+    {
+      "role": "user",
+      "content": "reload cho tôi HNI_Testing_16"
+    },
+    {
+      "role": "assistant",
+      "content": "Error executing tool: (psycopg.errors.UndefinedColumn) column \"expired_time\" of relation \"device_commands\" does not exist\nLINE 2: ...device_commands (username, command, created_time, expired_ti...\n                                                             ^\n[SQL: \n                INSERT INTO device_commands (username, command, created_time, expired_time, executed_time)\n                VALUES (\n                    %(username)s,\n                    %(command)s,\n                    now(),\n                    now() + interval '3 minute',\n                    now()\n                )\n                ON CONFLICT (username)\n                DO UPDATE SET\n                    command = EXCLUDED.command,\n                    created_time = now(),\n                    expired_time = now() + interval '3 minute',\n                    executed_time = device_commands.created_at\n                ]\n[parameters: {'username': 'HNI_Testing_16', 'command': 'reload'}]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    }
+  ],
+  "ee5bb877-2bc0-461f-8f78-20c3507d35dc": [
+    {
+      "role": "user",
+      "content": "thiết bị nào còn đang hoạt động nhỉ"
+    },
+    {
+      "role": "assistant",
+      "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_01, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Speedtest_Viettel_02, HNI_Testing_16, HNI_Testing_17, HNI_Testing_18, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
+    },
+    {
+      "role": "user",
+      "content": "reload cho tôi HNI_Testing_16"
+    },
+    {
+      "role": "assistant",
+      "content": "Error executing tool: (psycopg.errors.UndefinedColumn) column device_commands.created_at does not exist\nLINE 15:                     executed_time = device_commands.created_...\n                                             ^\n[SQL: \n                INSERT INTO device_commands (username, command, created_time, expire_time, executed_time)\n                VALUES (\n                    %(username)s,\n                    %(command)s,\n                    now(),\n                    now() + interval '3 minute',\n                    now()\n                )\n                ON CONFLICT (username)\n                DO UPDATE SET\n                    command = EXCLUDED.command,\n                    created_time = now(),\n                    expire_time = now() + interval '3 minute',\n                    executed_time = device_commands.created_at\n                ]\n[parameters: {'username': 'HNI_Testing_16', 'command': 'reload'}]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    }
+  ],
+  "8f06f15e-daa8-4f73-b6d8-10dd0068e489": [
+    {
+      "role": "user",
+      "content": "thiết bị nào còn đang hoạt động nhỉ"
+    },
+    {
+      "role": "assistant",
+      "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_01, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Speedtest_Viettel_02, HNI_Testing_16, HNI_Testing_17, HNI_Testing_18, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
+    },
+    {
+      "role": "user",
+      "content": "reload cho tôi thiết bị HNI_Testing_18"
+    },
+    {
+      "role": "assistant",
+      "content": "Error executing tool: (psycopg.errors.InsufficientPrivilege) permission denied for table device_commands\n[SQL: \n                UPDATE device_commands\n                SET\n                    command = %(command)s,\n                    created_time = now(),\n                    expire_time = now() + interval '3 minute',\n                    executed = false,\n                    executed_time = now()\n                WHERE username = %(username)s\n                ]\n[parameters: {'command': 'reload', 'username': 'HNI_Testing_18'}]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    }
+  ],
+  "79da2640-78be-4ac1-8199-47065a75c24a": [
+    {
+      "role": "user",
+      "content": "thiết bị nào còn hoạt động nhỉ"
+    },
+    {
+      "role": "assistant",
+      "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_01, HCM_Speedtest_Viettel_02, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Speedtest_Viettel_02, HNI_Testing_16, HNI_Testing_17, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
+    },
+    {
+      "role": "user",
+      "content": "reload cho tôi thiết bị HNI_Testing_16"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'HNI_Testing_16'."
+    }
+  ],
+  "ab019b37-99b0-41b2-bddf-f9dcaa50d2b6": [
+    {
+      "role": "user",
+      "content": "thiết bị nào đang hoạt động nhở"
+    },
+    {
+      "role": "assistant",
+      "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_02, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Speedtest_Viettel_02, HNI_Testing_16, HNI_Testing_17, HNI_Testing_18, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
+    },
+    {
+      "role": "user",
+      "content": "reload VQT_Testing_62 giúp tôi với"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'VQT_Testing_62'."
+    },
+    {
+      "role": "user",
+      "content": "reload TTH_Agent_2 hộ tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'TTH_Agent_2'."
+    },
+    {
+      "role": "user",
+      "content": "reload TTH_Agent_2 hộ tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'TTH_Agent_2'."
+    },
+    {
+      "role": "user",
+      "content": "reload TTH_Agent_2 hộ tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'TTH_Agent_2'."
+    }
+  ],
+  "654f96f9-1c69-4c56-8502-55ac4d22614f": [
+    {
+      "role": "user",
+      "content": "reload giúp tôi thiết bị TTH_Agent_2"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'reload' cho thiết bị 'TTH_Agent_2'."
+    },
+    {
+      "role": "user",
+      "content": "update thiết bị này luôn cho tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'update' cho thiết bị 'TTH_Agent_2'."
+    }
+  ],
+  "e32d9c91-8c2f-4e68-ba1f-905e8ece679b": [
+    {
+      "role": "user",
+      "content": "update giúp tôi thiết bị TTH_Agent_2"
+    },
+    {
+      "role": "assistant",
+      "content": "MISSING_INFO: Action không hợp lệ. Chỉ hỗ trợ reload/restart/update."
+    }
+  ],
+  "56128cde-eaef-4cee-9528-a65c0f715850": [
+    {
+      "role": "user",
+      "content": "update giúp tôi TTH_Agent_2"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'update_VQT-Agent-2.6.9554.16557.zip' cho thiết bị 'TTH_Agent_2'."
+    },
+    {
+      "role": "user",
+      "content": "restart nó luôn đi"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'restart' cho thiết bị 'TTH_Agent_2'."
+    },
+    {
+      "role": "user",
+      "content": "restart thiết bị TTH_Agent_2"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'restart' cho thiết bị 'TTH_Agent_2'."
+    },
+    {
+      "role": "user",
+      "content": "restart thiết bị TTH_Agent_2"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'restart' cho thiết bị 'TTH_Agent_2'."
+    }
+  ],
+  "83b34da6-64a3-401e-a6f7-dcdfcf4dec83": [
+    {
+      "role": "user",
+      "content": "update version update_VQT-Agent-2.6.9554.16557.zip cho TTH_Agent_2 cho tôi"
+    },
+    {
+      "role": "assistant",
+      "content": "Đã ghi lệnh 'update_VQT-Agent-2.6.9554.16557.zip' cho thiết bị 'TTH_Agent_2'."
+    },
+    {
+      "role": "user",
+      "content": "thiết bị nào đang hoạt ddoonhj nhỉ"
+    },
+    {
+      "role": "assistant",
+      "content": "Danh sách thiết bị đang hoạt động: AGG_Agent_1, AGG_Agent_2, BNH_Agent_1, BNH_Agent_2, CBG_Agent_1, CBG_Agent_2, CMU_Agent_1, CMU_Agent_2, CTO_Agent_1, CTO_Agent_2, CTO_Agent_3, DBN_Agent_1, DBN_Agent_2, DLK_Agent_1, DLK_Agent_2, DNG_Agent_1, DNG_Agent_2, DNG_Agent_3, DNG_Monitoring_Viettel_01, DNG_NOC_Viettel_01, DNG_Speedtest_Viettel_01, DNI_Agent_1, DNI_Agent_2, DTP_Agent_1, DTP_Agent_2, HCM_Agent_1, HCM_Agent_2, HCM_Agent_3, HCM_Monitoring_Viettel_01, HCM_NOC_FPT_01, HCM_NOC_Viettel_01, HCM_NOC_VNPT_01, HCM_Speedtest_Viettel_01, HCM_Speedtest_Viettel_02, HNI_Agent_1, HNI_Agent_2, HNI_Agent_3, HNI_Monitoring_Viettel_01, HNI_NOC_VNPT_01, HNI_Speedtest_Viettel_01, HNI_Testing_16, HNI_Testing_17, HNI_Testing_18, HNI_TTDL_Viettel_01, HPG_Agent_1, HPG_Agent_2, HPG_Agent_3, HTH_Agent_1, HTH_Agent_2, HYN_Agent_1, HYN_Agent_2, KHA_Agent_1, KHA_Agent_2, LCI_Agent_1, LCI_Agent_2, LCU_Agent_1, LCU_Agent_2, LDG_Agent_1, LDG_Agent_2, LSN_Agent_1, LSN_Agent_2, NAN_Agent_1, NAN_Agent_2, NBH_Agent_1, NBH_Agent_2, NBH_Agent_3, PTO_Agent_1, PTO_Agent_2, QNH_Agent_1, QNH_Agent_2, QNI_Agent_1, QNI_Agent_2, QTI_Agent_1, QTI_Agent_2, SLA_Agent_1, SLA_Agent_2, THA_Agent_1, THA_Agent_2, TNH_Agent_1, TNH_Agent_2, TNN_Agent_1, TNN_Agent_2, TNN_Agent_3, TQG_Agent_1, TQG_Agent_2, TTH_Agent_1, TTH_Agent_2, TTH_Agent_3, VLG_Agent_1, VLG_Agent_2, VQT_Agent_32, VQT_Agent_61, VQT_Testing_31, VQT_Testing_62"
+    }
   ]
 }

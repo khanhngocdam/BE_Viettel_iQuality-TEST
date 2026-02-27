@@ -7,6 +7,7 @@ from openai import OpenAI
 from sqlalchemy.orm import Session
 
 from app.core.llm.memory import FileChatMemory, BaseChatMemory
+from app.core.llm.tools.device_tasks import DeviceCommandTool, GetActiveDevicesTool
 from app.core.llm.tools.network_kpi import NetworkSummaryTool
 
 # Setup basic logger
@@ -36,13 +37,21 @@ class ChatAgent:
         # Add more tools here in the future
         self.tools = [
             NetworkSummaryTool(db=db),
+            GetActiveDevicesTool(db=db),
+            DeviceCommandTool(db=db),
         ]
         self.tool_map = {t.name: t for t in self.tools}
 
     def _get_system_prompt(self) -> str:
         return (
             "Bạn là trợ lý hỏi đáp thông minh cho hệ thống Viettel iQuality.\n"
-            "Nhiệm vụ của bạn là hỗ trợ người dùng tra cứu thông tin chất lượng mạng (KPI) dựa trên dữ liệu đo kiểm thực tế.\n\n"
+            "Nhiệm vụ của bạn gồm:\n"
+            "1) Hỗ trợ tra cứu thông tin chất lượng mạng (KPI) dựa trên dữ liệu đo kiểm thực tế.\n"
+            "2) Hỗ trợ thao tác thiết bị theo đúng tool.\n\n"
+            "Quy tắc dùng tool:\n"
+            "- Nếu người dùng hỏi danh sách thiết bị đang hoạt động/gần đây online: gọi tool get_active_devices.\n"
+            "- Nếu người dùng yêu cầu reload/restart/update một thiết bị theo username: gọi tool send_device_command với action tương ứng và username đúng như người dùng cung cấp.\n"
+            "- Không tự bịa username hoặc action.\n"
         )
 
     def chat(self, user_message: str) -> str:
