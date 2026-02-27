@@ -14,11 +14,7 @@ def create_app() -> FastAPI:
     # ===== CORS =====
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=[
-            "http://localhost:3000",
-            "http://171.243.228.60:1218",
-            "http://192.168.10.240:3000",
-        ],
+        allow_origins=["*"],
         allow_credentials=True,   # dùng nếu FE gửi cookie / auth
         allow_methods=["*"],
         allow_headers=["*"],
